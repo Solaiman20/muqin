@@ -23,6 +23,6 @@ class _PDFViewerState extends State<PDFViewer> {
             )),
         body: Center(
             child: SfPdfViewer.network(
-                'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf')));
+                'https://www.arab-books.com/wp-content/uploads/2020/06/79283830.pdf')));
   }
 }

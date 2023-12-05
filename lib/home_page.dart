@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muqin/audio_player.dart';
 import 'package:muqin/pdf_viewr.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,16 +25,15 @@ class HomePage extends StatelessWidget {
             Align(
               child: Container(
                 alignment: Alignment.topCenter,
-                decoration: BoxDecoration(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                ),
-                clipBehavior: Clip.hardEdge,
-                child: Image(
-                  image: AssetImage("assets/AhmedShawqi.jpg"),
-                  fit: BoxFit.cover,
+                  child: const Image(
+                    image: AssetImage("assets/AhmedShawqi.jpg"),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
         Container(
@@ -42,6 +42,7 @@ class HomePage extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                const SizedBox(height: 20),
                 Container(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -55,6 +56,7 @@ class HomePage extends StatelessWidget {
                       color: Theme.of(context).textTheme.bodyMedium!.color),
                   textDirection: TextDirection.rtl,
                 ),
+                const SizedBox(height: 230),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -98,10 +100,10 @@ class HomePage extends StatelessWidget {
                         )),
                     IconButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (ctx) => const PDFViewer()));
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (ctx) => Player()));
                         },
-                        style: ElevatedButton.styleFrom(
+                        style: IconButton.styleFrom(
                             backgroundColor: Theme.of(context)
                                 .buttonTheme
                                 .colorScheme!

@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Muqin Prototype',
       theme: Theme.of(context).copyWith(
+          textTheme:
+              GoogleFonts.notoSansArabicTextTheme(Theme.of(context).textTheme),
           colorScheme: ColorScheme.fromSeed(
               seedColor: const Color.fromARGB(255, 23, 27, 54)),
           buttonTheme: ButtonThemeData(
